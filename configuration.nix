@@ -1,9 +1,5 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, ... }:
 {
-  imports = [
-    inputs.vpsadminos.nixosConfigurations.container
-  ];
- 
   environment.systemPackages = with pkgs; [
     vim
   ];

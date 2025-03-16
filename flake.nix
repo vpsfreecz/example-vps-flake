@@ -7,6 +7,7 @@
   outputs = { self, nixpkgs, vpsadminos }: {
     nixosConfigurations.vps = nixpkgs.lib.nixosSystem {
       modules = [
+        vpsadminos.nixosConfigurations.container
         ./configuration.nix
       ];
     };
