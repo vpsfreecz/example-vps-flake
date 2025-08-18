@@ -29,5 +29,5 @@ jobs:
           git add flake.lock
           git diff --cached --quiet && exit 0
           git commit -m "flake: update lock file"
-          git push origin master
+          git push origin main
 
