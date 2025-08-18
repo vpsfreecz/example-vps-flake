@@ -7,7 +7,12 @@
   outputs = { self, nixpkgs, vpsadminos }: {
     nixosConfigurations.vps = nixpkgs.lib.nixosSystem {
       modules = [
+        # For NixOS unstable
         vpsadminos.nixosConfigurations.containerUnstable
+
+        # For NixOS stable (change also nixpkgs.url above)
+        # vpsadminos.nixosConfigurations.containerStable
+
         ./configuration.nix
       ];
     };
