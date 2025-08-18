@@ -26,10 +26,8 @@ jobs:
       - name: Update flake lock file
         run: |
           nix flake update
+          git add flake.lock
           git diff --cached --quiet && exit 0
-          git commit -m "flake: update lock file" flake.lock
-
-      - name: Push updates
-        run: |
+          git commit -m "flake: update lock file"
           git push origin master
 
